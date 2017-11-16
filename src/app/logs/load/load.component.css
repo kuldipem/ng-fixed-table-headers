@@ -1,0 +1,52 @@
+
+.container-fluid{
+
+    margin-top: 50px;
+
+}
+.container{
+    margin-top: 20px;
+}
+
+.search{
+
+    margin-top: 10px;
+    
+    
+}
+
+.btn-circle.btn-xl {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 25px;
+    text-align:center;
+    margin-right: 40px;
+   
+    background:tomato;
+    float : right;
+}
+  
+  .panel-shadow {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2);
+}
+a{
+    color: black;
+}
+th:active {
+    color: firebrick;
+}
+th:hover{
+    cursor: pointer;
+}
+/* .fixed{
+    top:0;
+    position:fixed;
+    width:auto;
+    display:none;
+    border:none;
+  }
+  .fixed-search{
+    position: fixed;
+    z-index: 9999;
+  } */

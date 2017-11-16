@@ -1,0 +1,9 @@
+div { 
+    background: url(https://static.seekingalpha.com/uploads/2015/7/7/saupload_eJRGMUWkADyUDZboHYX8Wk67UdhL88uBj7DqqjgnePrqOYIGzEj1TO2TZ5lUHtdjQRzqAdw-h0tg8fnlfQ5xrx1Zzv3wAuQfg9CCfCK2rmDYGsujLamE072JZAaEY-SYABgRPtE.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100vh;
+    width:100vw;
+  }
