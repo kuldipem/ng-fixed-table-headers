@@ -5,6 +5,6 @@
 
 export const environment = {
   production: false,
-  
+  apiUrl: 'this is dev'
 };
  
