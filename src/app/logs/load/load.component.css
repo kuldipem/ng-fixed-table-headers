@@ -1,18 +1,18 @@
 
-.container-fluid{
-
-    margin-top: 50px;
-
+.overflow-hide{
+    overflow: hidden;
 }
-.container{
+
+.container-fluid {
+    margin-top: 150px;
+}
+
+.container {
     margin-top: 20px;
 }
 
-.search{
-
+.search {
     margin-top: 10px;
-    
-    
 }
 
 .btn-circle.btn-xl {
@@ -20,33 +20,59 @@
     height: 50px;
     font-size: 18px;
     border-radius: 25px;
-    text-align:center;
+    text-align: center;
     margin-right: 40px;
-   
-    background:tomato;
-    float : right;
+    background: tomato;
+    float: right;
 }
-  
-  .panel-shadow {
+
+.panel-shadow {
     box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2);
 }
-a{
+
+a {
     color: black;
 }
+
 th:active {
     color: firebrick;
 }
-th:hover{
+
+th:hover {
     cursor: pointer;
 }
-/* .fixed{
-    top:0;
-    position:fixed;
-    width:auto;
-    display:none;
-    border:none;
-  }
-  .fixed-search{
+
+.fixed {
+    top: 0;
     position: fixed;
-    z-index: 9999;
-  } */
+    width: auto;
+    display: none;
+    border: none;
+}
+
+.fixed-search {
+    position: fixed;
+    z-index: 9;
+    background: white;
+    width: 100%;
+    top: 50px;
+    left: 0;
+    right: 0;
+    padding: 0px 10px;
+}
+
+.fixed-adv-search {
+    position: fixed;
+    width: 96%;
+    z-index: 9;
+    background: white;
+    top: 120px;
+}
+
+.table-row-container > div{
+    position: absolute;
+    top: 150px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

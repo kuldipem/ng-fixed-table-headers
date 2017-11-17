@@ -1,5 +1,6 @@
-import { Component, OnInit,AfterViewInit } from '@angular/core';
-import {LoadService} from '../../services/load.service';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { LoadService } from '../../services/load.service';
+import './load.script.js';
 
 @Component({
   selector: 'app-load',
@@ -9,62 +10,62 @@ import {LoadService} from '../../services/load.service';
 })
 export class LoadComponent implements AfterViewInit {
 
-    private data:Array<any> = [];
-    private advancedSearch:boolean = false ;
-    count:number = 100;
-    loading:boolean = false;
-  
-    constructor(private service:LoadService){
-  
-  
-    }
-    ngOnInit(){
-  
-   this.LaodServiceCall();
-  
-    }
-    ngAfterViewInit() {
-      window['fixTable']();
+  private data: Array<any> = [];
+  private advancedSearch: boolean = false;
+  count: number = 100;
+  loading: boolean = false;
+
+  constructor(private service: LoadService) {
+
+  }
+  ngOnInit() {
+
+    this.LaodServiceCall();
+
+  }
+  ngAfterViewInit() {
+    window['InitFixLoadTable']();
+  }
+  ngOnDestroy() {
+    window['DestoryFixLoadTable']();
+  }
+  // Initial call to data service with StartTime Sorting 
+  private LaodServiceCall() {
+    this.loading = false;
+    this.service.LoadApiCall().subscribe(res=>{
+       this.loading = false;
+      return this.data = res;
+     });
+
   }
 
-    // Initial call to data service with StartTime Sorting 
-    private LaodServiceCall(){
-      this.loading = true;
-      this.service.LoadApiCall().subscribe(res=>{
-        this.loading = false;
-       return this.data = res;
-      });
-      
-      
-    }
 
+  // Sorting function for sorting the table depends upon the table heading clicks 
+  private sortingTableData(sortingValue: string) {
 
-    // Sorting function for sorting the table depends upon the table heading clicks 
-    private sortingTableData(sortingValue : string ){
+    this.service.sortingUrl(sortingValue).subscribe(res => this.data = res);
 
-   this.service.sortingUrl(sortingValue).subscribe(res=>this.data = res);
+  }
+  // toggle advanced search 
+  private showAdvancedSearch() {
+    this.advancedSearch = !this.advancedSearch;
+  }
 
-    }
-    // toggle advanced search 
-    private showAdvancedSearch(){
-      this.advancedSearch = !this.advancedSearch;
-    }
+  //removes advanced search 
+  private closeAdvancedSearch() {
 
-    //removes advanced search 
-    private closeAdvancedSearch(){
+    this.advancedSearch = false;
 
-      this.advancedSearch = false;
-      
-    }
-   
-    // Advanced search function  
-    private onSearch(value){
+  }
 
-      // deletes the empty element in the array 
-      Object.keys(value).forEach((key) => (value[key] == "") && delete value[key]);
-      
-      this.service.jsonToUrl(value);
-      this.LaodServiceCall();
+  // Advanced search function  
+  private onSearch(value) {
 
-    }
+    // deletes the empty element in the array 
+    Object.keys(value).forEach((key) => (value[key] == "") && delete value[key]);
+
+    this.service.jsonToUrl(value);
+    this.LaodServiceCall();
+
+  }
 }

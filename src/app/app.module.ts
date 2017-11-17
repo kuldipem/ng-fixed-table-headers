@@ -32,8 +32,6 @@ import { ProgramComponent } from './logs/program/program.component';
 import { LogdashboardComponent } from './logs/logdashboard/logdashboard.component';
 import { HomeComponent } from './home/home.component';
 
-import './windowFixed.js'
-
 @NgModule({
   declarations: [
     AppComponent,
